@@ -1,7 +1,7 @@
 package movements
 
 import (
-	"github.com/jfsanin/challenge/constants"
+	"github.com/eriksencosta/tapsi-challenge/constants"
 	"fmt"
 )
 

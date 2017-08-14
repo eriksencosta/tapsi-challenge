@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"io"
-	"github.com/jfsanin/challenge/movements"
-	"github.com/jfsanin/challenge/validations"
+	"github.com/eriksencosta/tapsi-challenge/movements"
+	"github.com/eriksencosta/tapsi-challenge/validations"
 )
 
 type InitialGameState struct {

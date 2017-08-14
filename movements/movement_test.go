@@ -2,7 +2,7 @@ package movements
 
 import (
 	"testing"
-	"github.com/jfsanin/challenge/constants"
+	"github.com/eriksencosta/tapsi-challenge/constants"
 )
 
 var board = "00000000" +

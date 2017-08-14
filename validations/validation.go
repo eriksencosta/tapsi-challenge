@@ -3,7 +3,7 @@ package validations
 import (
 	"strings"
 	"errors"
-	"github.com/jfsanin/challenge/constants"
+	"github.com/eriksencosta/tapsi-challenge/constants"
 )
 
 func isDone(board string) bool {

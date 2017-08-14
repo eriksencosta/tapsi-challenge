@@ -2,7 +2,7 @@ package movements
 
 import (
 	"errors"
-	"github.com/jfsanin/challenge/constants"
+	"github.com/eriksencosta/tapsi-challenge/constants"
 )
 
 func findSimpleMoveWhites(board2D [constants.NumberOfRows][constants.NumberOfColumns]string, player string, row int, column int) (int, int) {

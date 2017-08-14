@@ -2,7 +2,7 @@ package validations
 
 import (
 	"testing"
-	"github.com/jfsanin/challenge/constants"
+	"github.com/eriksencosta/tapsi-challenge/constants"
 )
 
 func TestIsEmpty(t *testing.T) {
