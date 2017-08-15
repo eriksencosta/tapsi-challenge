@@ -6,7 +6,8 @@ import (
 )
 
 func findEatingMoveWhites(board2D [constants.NumberOfRows][constants.NumberOfColumns]string, player string, row int, column int) (int, int) {
-
+	// It is a little bit hard for the eye to track these operations in the if statements. The minus and plus operations could be
+	// carried by the functions and/or extracted to helpers functions.
 	if IsValidPosition(row - constants.DoubleMovement, column-constants.DoubleMovement) &&
 		IsThereAnEnemy(board2D, player, row-constants.SingleMovement, column-constants.SingleMovement) &&
 		IsAnEmptyPlace(board2D, row-constants.DoubleMovement, column-constants.DoubleMovement) {
@@ -54,6 +55,7 @@ func FindEatingMove(board2D [constants.NumberOfRows][constants.NumberOfColumns]s
 		for column := 0; column < constants.NumberOfColumns; column++ {
 			if player == board2D[row][column] {
 				newRow, newColumn := eatingFunction(board2D, player, row, column)
+				// nil would be a better return than the same row/column. It would be more explicit that no solution was found.
 				if newRow != row && newColumn != column {
 					return Movement{row, column,newRow, newColumn}, nil
 				}

@@ -48,6 +48,7 @@ func FindSimpleMove(board2D [constants.NumberOfRows][constants.NumberOfColumns]s
 		for column := 0; column < constants.NumberOfColumns; column++ {
 			if player == board2D[row][column] {
 				newRow, newColumn := simpleMoveFunction(board2D, player, row, column)
+				// nil would be a better return than the same row/column. It would be more explicit that no solution was found.
 				if newRow != row && newColumn != column {
 					return Movement{row, column,newRow, newColumn}, nil
 				}

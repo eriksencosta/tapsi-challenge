@@ -33,10 +33,12 @@ func hasValidPieces(board string) bool {
 	return whites+blacks+empties == constants.NumberOfSquares
 }
 
+// hasPiecesInValidSquares
 func hasValidStructure(board string) bool{
 	for index := 0; index < len(board); index++ {
 		row := int( index / 8)
 		if string(board[index]) != constants.EmptySquare{
+			// if (placedInInvalidSquare)
 			if (row % 2 == 1 && index % 2 == 1) || (row % 2 == 0 && index % 2 == 0){
 				return false
 			}
