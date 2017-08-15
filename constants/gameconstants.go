@@ -7,6 +7,7 @@ const EmptySquare string = "0"
 const NumberOfSquares int = 64
 const NumberOfRows int = 8
 const NumberOfColumns int = 8
+const MaximumPieces int = 12
 
 const SingleMovement int = 1;
 
