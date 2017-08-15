@@ -109,7 +109,7 @@ func TestHasValidPieces(t *testing.T) {
 	}
 }
 
-func TestHasInValidPieces(t *testing.T) {
+func TestHasInvalidPieces(t *testing.T) {
 	invalidPieces := 	"0b0b0b0b" +
 						"00b0t0b0" +
 						"00000000" +
@@ -162,6 +162,36 @@ func TestIsValidPlayer(t *testing.T) {
 
 func TestIsNotValidPlayer(t *testing.T) {
 	if isValidPlayer(constants.EmptySquare){
+		t.Error("expected false")
+	}
+}
+
+func TestHasMorePiecesThanAllowed(t *testing.T) {
+	board := "0b0b0b0b" +
+			 "b0b0b0b0" +
+			 "0b0b0b0b" +
+			 "b0b0b0b0" +
+			 "00000000" +
+			 "w0w0w0w0" +
+			 "0w0w0w0w" +
+			 "w0w0w0w0"
+
+	if !hasMorePiecesThanAllowed(board, "b") {
+		t.Error("expected true")
+	}
+}
+
+func TestHasNotMorePiecesThanAllowed(t *testing.T) {
+	board := "0b0b0b0b" +
+			 "b0b0b0b0" +
+			 "0b0b0b0b" +
+			 "b0b0b0b0" +
+			 "00000000" +
+			 "w0w0w0w0" +
+			 "0w0w0w0w" +
+			 "w0w0w0w0"
+
+	if hasMorePiecesThanAllowed(board, "w") {
 		t.Error("expected false")
 	}
 }

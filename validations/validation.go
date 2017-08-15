@@ -6,6 +6,10 @@ import (
 	"github.com/eriksencosta/tapsi-challenge/constants"
 )
 
+func hasMorePiecesThanAllowed(board string, player string) bool {
+	return (strings.Count(board, player) > constants.MaximumPieces)
+}
+
 func isDone(board string) bool {
 	whites := strings.Count(board, constants.WhitePlayer)
 	blacks := strings.Count(board, constants.BlackPlayer)
@@ -67,6 +71,10 @@ func Validate(board string, player string) error{
 		return errors.New("El jugador debe ser o w o b")
 	} else if !hasValidStructure(board){
 		return errors.New("Las fichas solo pueden estar en cuadro negros, por favor verifique")
+	} else if hasMorePiecesThanAllowed(board, constants.WhitePlayer) {
+		return errors.New("El jugador w tiene más piezas que permitido")
+	} else if hasMorePiecesThanAllowed(board, constants.BlackPlayer) {
+		return errors.New("El jugador b tiene más piezas que permitido")
 	} else if isDone(board) {
 		return errors.New("No hay movimientos por hacer, ya hay un ganador")
 	} else{
